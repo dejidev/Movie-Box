@@ -7,7 +7,7 @@ import TV from "../assets/tv.png";
 import Menu from "../assets/menu.png";
 import Poster from "../assets/Poster.png";
 import Rating from "../assets/Rating.png";
-import play from "../assets/play.png";
+import play from "../assets/Play.png";
 import Footer from '@/components/Footer';
 
 

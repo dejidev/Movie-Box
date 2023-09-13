@@ -2,18 +2,18 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import TV from "../assets/tv.png";
-import Menu from "../assets/menu.png";
+import Menu from "../assets/Menu.png";
 import Home from "../assets/Home.png";
 import Movie from "../assets/Movie_Projector.png";
 import Show from "../assets/TV_show.png";
 import calendar from "../assets/calendar.png";
 import logOut from "../assets/Logout.png";
 import bigPlay from "../assets/bigPlay.png";
-import star from "../assets/star.png";
+import star from "../assets/Star.png";
 import twoTicket from "../assets/Tickets.png";
 import list from "../assets/list.png";
 import gp from "../assets/gp.png";
-import Link from 'next/link';
+import Link from 'next/Link';
 
 import { Poppins } from 'next/font/google'
 

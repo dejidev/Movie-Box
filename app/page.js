@@ -20,7 +20,7 @@ const Home = () => {
       <div className='absolute w-full -z-10 '>
         <Image
           className='h-screen'
-          alt="Mountains"
+          alt="poster"
           src={Poster}
           quality={100}
           sizes="100vw"
@@ -53,7 +53,7 @@ const Home = () => {
         <div>
           <h1 className='font-bold  text-5xl md:text-5xl py-4'>John Wick 3 : Parabellum</h1>
           <Image src={Rating} alt="Menu" />
-          <p className='py-4'>John Wick is on the run after killing a member of the international assassins' guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</p>
+          <p className='py-4'>John Wick is on the run after killing a member of the international assassins guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</p>
           <div className='bg-[#BE123C] flex items-center py-4 px-4 uppercase ' style={{ width: 'fit-content' }} >
             <Image src={play} alt='play' />
             <p className='px-2'>Watch trailer</p>

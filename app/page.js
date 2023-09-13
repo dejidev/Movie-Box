@@ -4,7 +4,7 @@ import Image from 'next/image';
 import MovieList from '@/components/movieList';
 import Search from '@/components/Search';
 import TV from "../assets/tv.png";
-import Menu from "../assets/menu.png";
+import Menu from "../assets/Menu.png";
 import Poster from "../assets/Poster.png";
 import Rating from "../assets/Rating.png";
 import play from "../assets/Play.png";

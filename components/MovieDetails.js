@@ -11,9 +11,9 @@ import logOut from "../assets/Logout.png";
 import bigPlay from "../assets/bigPlay.png";
 import star from "../assets/Star.png";
 import twoTicket from "../assets/Tickets.png";
-import list from "../assets/list.png";
+import list from "../assets/List.png";
 import gp from "../assets/gp.png";
-import Link from 'next/Link';
+import Link from 'next/link';
 
 import { Poppins } from 'next/font/google'
 

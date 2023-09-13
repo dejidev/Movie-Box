@@ -47,7 +47,7 @@ const MovieList = ({query}) => {
 
     return (
         <div className='text-black'>
-            <div className='flex items-center justify-between md:m-8 mt-8'>
+            <div className='flex items-center justify-between md:m-8 mt-12'>
                 <h2 className='font-bold  text-2xl md:text-5xl py-4 '>Featured Movies</h2>
 
                 <div

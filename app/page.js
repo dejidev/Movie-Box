@@ -45,7 +45,11 @@ const Home = () => {
       </header>
 
 
-      <section className=' w-5/6 md:w-1/2 lg:w-1/3 flex h-[90vh] justify-center items-center  px-3 md:px-16' >
+      <div className='w-full md:hidden flex justify-center mt-4'>
+        <Search className="w-full" query={query} setQuery={setQuery} />
+      </div>
+
+      <section className=' w-5/6 md:w-1/2 lg:w-1/3 flex h-[80vh] md:h-[90vh] justify-center items-center  px-3 md:px-16' >
         <div>
           <h1 className='font-bold  text-5xl md:text-5xl py-4'>John Wick 3 : Parabellum</h1>
           <Image src={Rating} alt="Menu" />

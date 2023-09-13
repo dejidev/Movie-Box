@@ -58,9 +58,9 @@ input[type="search"]:focus {
         /* Adjust as needed for small screens */
     }
 
-    .search_container{
+    /* .search_container{
         display: none;
-    }
+    } */
 
     button[type="submit"] {
         text-indent: -999px;

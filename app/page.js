@@ -1,17 +1,20 @@
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 import Image from 'next/image';
 import MovieList from '@/components/movieList';
 import Search from '@/components/Search';
-import TV from "../assets/tv.png"
-import Menu from "../assets/menu.png"
-import Poster from "../assets/Poster.png"
-import Rating from "../assets/Rating.png"
-import play from "../assets/play.png"
+import TV from "../assets/tv.png";
+import Menu from "../assets/menu.png";
+import Poster from "../assets/Poster.png";
+import Rating from "../assets/Rating.png";
+import play from "../assets/play.png";
 import Footer from '@/components/Footer';
 
 
 
 const Home = () => {
+  const [query, setQuery] = useState('popular');
+
   return (
     <div className='relative w-full text-white'>
       <div className='absolute w-full -z-10 '>
@@ -19,9 +22,7 @@ const Home = () => {
           className='h-screen'
           alt="Mountains"
           src={Poster}
-          // placeholder="blur"
           quality={100}
-          // fill
           sizes="100vw"
           style={{
             objectFit: 'cover',
@@ -35,19 +36,13 @@ const Home = () => {
           <p className='pl-2 font-semibold md:pl-4 lg:font-bold md:text-2xl text-center'>Movie Box</p>
         </div>
         <div className='md:flex hidden items-center justify-center space-x-4 md:w-1/2 lg:w-2/3'>
-          <Search className="w-full" />
+          <Search className="w-full" query={query} setQuery={setQuery} />
         </div>
         <div className='flex items-center justify-end space-x-4'>
           <p className='mr-1 md:mr-4 text-xs lg:text-base'>Sign in</p>
           <Image src={Menu} alt="Menu" />
         </div>
       </header>
-
-
-
-
-
-
 
 
       <section className=' w-5/6 md:w-1/2 lg:w-1/3 flex h-[90vh] justify-center items-center  px-3 md:px-16' >
@@ -66,7 +61,7 @@ const Home = () => {
 
 
       <div className="px-3 md:px-8" >
-        <MovieList />
+        <MovieList query={query} />
       </div>
 
       <div>

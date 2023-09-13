@@ -8,14 +8,12 @@ import Movie from "../assets/Movie_Projector.png";
 import Show from "../assets/TV_show.png";
 import calendar from "../assets/calendar.png";
 import logOut from "../assets/Logout.png";
-import Rectangle from "../assets/Rectangle.png";
 import bigPlay from "../assets/bigPlay.png";
 import star from "../assets/star.png";
 import twoTicket from "../assets/Tickets.png";
 import list from "../assets/list.png";
 import gp from "../assets/gp.png";
 import Link from 'next/link';
-import GenreButtons from './GenreButton';
 
 import { Poppins } from 'next/font/google'
 

@@ -6,16 +6,16 @@ import { BsChevronRight } from "react-icons/bs"
 import MovieCard from './MovieCard';
 import { RotatingLines } from 'react-loader-spinner';
 
-const MovieList = () => {
+const MovieList = ({query}) => {
     const [movies, setMovies] = useState([]);
     const [showMore, setShowMore] = useState(false);
     const initialCardCount = 10;
-
+    // console.log(query);
     useEffect(() => {
         // Define an async function to fetch popular movies
         const fetchPopularMovies = async () => {
             try {
-                const response = await tmdbApi.get('/movie/popular');
+                const response = await tmdbApi.get(`/movie/${query}`);
                 setMovies(response.data.results);
             } catch (error) {
                 console.error('Error fetching movies:', error);
@@ -25,7 +25,7 @@ const MovieList = () => {
         // Call the fetchPopularMovies function
         fetchPopularMovies();
 
-    }, []);
+    }, [query]);
 
     if (movies.length === 0) {
         return <div className='flex justify-center items-center h-[50vh]'>

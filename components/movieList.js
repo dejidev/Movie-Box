@@ -43,7 +43,7 @@ const MovieList = ({query}) => {
         setShowMore(!showMore);
     };
 
-    console.log(movies);
+    // console.log(movies);
 
     return (
         <div className='text-black'>

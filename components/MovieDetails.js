@@ -220,7 +220,7 @@ const MovieDetails = ({ movie }) => {
                 </aside>
 
                 <section className='w-full md:w-3/4 mx-3 md:mx-6 lg:mx-8 mt-20 md:mt-8'>
-                    <div className="relative mt-3 md:mt-0 ">
+                    <div className="relative mt-3 md:mt-0 " data-testid="movie-poster">
                         <Image
                             src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
                             sizes="100vw"
@@ -248,10 +248,10 @@ const MovieDetails = ({ movie }) => {
                         <div className='md:w-2/3'>
                             <div className='lg:flex items-center justify-between'>
                                 <p className='gap-2 font-medium text-base md:text-[20px] '>
-                                    <span className='px-1'>{movie.original_title}</span>•
-                                    <span className='px-1'>{movie.release_date}</span>•
+                                    <span data-testid="movie-title" className='px-1'>{movie.original_title}</span>•
+                                    <span data-testid="movie-release-date" className='px-1'>{movie.release_date}</span>•
                                     {/* <span className='px-1'>{movie.vote_count}</span>• */}
-                                    {/* <span className='px-1'>{movie.runtime}m</span> */}
+                                    <span data-testid="movie-overview" className='px-1'>{movie.runtime}m</span>
                                 </p>
 
                                 <div>
@@ -266,7 +266,7 @@ const MovieDetails = ({ movie }) => {
                                 </div>
                             </div>
 
-                            <p className='md:my-4 mb-4 text-sm'>{movie.overview}
+                            <p className='md:my-4 mb-4 text-sm' data-testid="movie-overview">{movie.overview}
                             </p>
 
                             <div className='gap-2 font-medium'>

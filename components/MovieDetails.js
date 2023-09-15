@@ -251,7 +251,7 @@ const MovieDetails = ({ movie }) => {
                                     <span data-testid="movie-title" className='px-1'>{movie.original_title}</span>•
                                     <span data-testid="movie-release-date" className='px-1'>{movie.release_date}</span>•
                                     {/* <span className='px-1'>{movie.vote_count}</span>• */}
-                                    <span data-testid="movie-overview" className='px-1'>{movie.runtime}m</span>
+                                    <span data-testid="movie-runtime" className='px-1'>{movie.runtime}m</span>
                                 </p>
 
                                 <div>

@@ -49,10 +49,9 @@ const MovieCard = ({ movie }) => {
     const firstGenreName = getFirstGenreName(movie.genre_ids);
 
 
-
-
     return (
-        <div className='mb-6 md:px-8 px-3'>
+        <div className='mb-6 md:px-8 px-3 ' data-testid="movie-card">
+
             <div className='relative w-auto' >
                 {/* <img src="https://image.tmdb.org/t/p/w185/{{movies.poster_path}}" alt="pics" className='w-full' /> */}
                 <Image src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt='poster' width="500" height="500" className='w-full' data-testid='movie-poster' />
@@ -69,6 +68,7 @@ const MovieCard = ({ movie }) => {
             </div>
 
             <Link href={`/movie/${movie.id}`}>
+
                 <p className='text-[12px] text-gray-400' data-testid='movie-release-date'>{movie.release_date}</p>
                 <h2 className='text-[18px] font-semibold' data-testid='movie-title'>{movie.original_title}</h2>
                 <div className='text-[12px] flex items-center justify-between'>

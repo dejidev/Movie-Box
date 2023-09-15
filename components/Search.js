@@ -26,8 +26,8 @@ const Search = ({ onSearch, query, setQuery }) => {
     const dropdownItems = ['top_rated', 'popular'];
 
     const handleSearch = () => {
-        onSearch(query);
-        setShowDropdown(true);
+        // onSearch(query);
+        setShowDropdown(!showDropdown);
         setTimeout(() => setShowDropdown(false), 3000);
     };
 

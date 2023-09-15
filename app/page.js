@@ -13,7 +13,7 @@ import Footer from '@/components/Footer';
 
 
 const Home = () => {
-  const [query, setQuery] = useState('popular');
+  const [query, setQuery] = useState('top_rated');
 
   return (
     <div className='relative w-full text-white'>

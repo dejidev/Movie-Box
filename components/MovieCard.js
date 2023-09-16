@@ -72,7 +72,7 @@ const MovieCard = ({ movie }) => {
                 </div>
             </div>
 
-            <Link href={`/movie/${movie.id}`}>
+            <Link href={`/movies/${movie.id}`}>
 
                 <p data-testid='movie-release-date' className='text-[12px] text-gray-400' >{movie_release_date}</p>
                 <h2 data-testid='movie-title' className='text-[18px] font-semibold' >{movie.title}</h2>

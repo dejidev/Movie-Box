@@ -3,10 +3,9 @@
 import { useEffect, useState } from 'react';
 // import { useRouter } from 'next/router';
 import { useParams } from 'next/navigation';
-import MovieDetails from '../../components/MovieDetails';
-import tmdbApi from '../../lib/tmdb';
+import MovieDetails from '../../../components/MovieDetails';
+import tmdbApi from '../../../lib/tmdb';
 import { RotatingLines } from 'react-loader-spinner';
-
 
 
 const MovieDetailPage = () => {

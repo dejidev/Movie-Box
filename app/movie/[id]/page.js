@@ -19,7 +19,7 @@ const MovieDetailPage = () => {
     useEffect(() => {
         if (id) {
             // Fetch movie details based on the id
-            tmdbApi.get(`/movie/${id}`)
+            tmdbApi.get(`/movies/${id}`)
                 .then((response) => {
                     if (response.data) {
                         setMovie(response.data);

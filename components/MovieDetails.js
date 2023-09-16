@@ -45,10 +45,8 @@ const MovieDetails = ({ movie }) => {
         setAsideVisible(!asideVisible);
     };
 
-
-
-    console.log(movie.genre_ids);
-    console.log(movie);
+    // console.log(movie.genre_ids);
+    // console.log(movie);
     // Render the movie details here
     return (
         <div className={poppins.className}>
@@ -248,7 +246,7 @@ const MovieDetails = ({ movie }) => {
                         <div className='md:w-2/3'>
                             <div className='lg:flex items-center justify-between'>
                                 <p className='gap-2 font-medium text-base md:text-[20px] '>
-                                    <span data-testid="movie-title" className='px-1'>{movie.original_title}</span>•
+                                    <span data-testid="movie-title" className='px-1'>{movie.title}</span>•
                                     <span data-testid="movie-release-date" className='px-1'>{movie.release_date}</span>•
                                     {/* <span className='px-1'>{movie.vote_count}</span>• */}
                                     <span data-testid="movie-runtime" className='px-1'>{movie.runtime}m</span>
@@ -270,13 +268,13 @@ const MovieDetails = ({ movie }) => {
                             </p>
 
                             <div className='gap-2 font-medium'>
-                                <p><span>Production_companies : </span><span className='text-[#BE123C]'> {movie.production_companies[0].name}</span></p>
-                                <p><span>Production_countries : </span><span className='text-[#BE123C]'> {movie.production_countries[0].name}</span></p>
-                                <p><span>Status :</span><span className='text-[#BE123C]'> {movie.status}</span></p>
+                                <p><span>Director : </span><span className='text-[#BE123C]'> Joseph Kosinski</span></p>
+                                <p><span>Writers :  </span><span className='text-[#BE123C]'> Jim Cash, Jack Epps Jr,  Peter Craig</span></p>
+                                <p><span>Stars : </span><span className='text-[#BE123C]'> Tom Cruise, Jennifer Connelly, Miles Teller</span></p>
                             </div>
                             <div className=' items-center md:border md:inline-flex md:mt-4'>
-                                <p className='bg-[#BE123C] text-white px-4 py-2 rounded-md inline-block my-1'>Top rated movie #65</p>
-                                <p className='px-2 my-1'>Awards: 9 nominations</p>
+                                <p className='bg-[#BE123C] text-white px-4 py-2 rounded-md inline-block my-1'> Top rated movie #65 </p>
+                                <p className='px-2 my-1'> Awards: 9 nominations </p>
                             </div>
                         </div>
 

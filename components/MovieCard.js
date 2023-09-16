@@ -8,7 +8,12 @@ import { MdFavorite } from "react-icons/md";
 
 
 const MovieCard = ({ movie }) => {
+    const convertToUTC = (dateString) => {
+        const date = new Date(dateString);
+        return date.toISOString(); // Convert to UTC format (e.g., "2023-09-07T12:34:56.789Z")
+    };
 
+    const releaseDateUTC = convertToUTC(movie.release_date);
     const [liked, setLiked] = useState(false);
 
     const toggleLike = () => {
@@ -50,13 +55,12 @@ const MovieCard = ({ movie }) => {
 
 
     return (
-        <div className='mb-6 md:px-8 px-3 ' data-testid="movie-card">
+        <div data-testid="movie-card" className='mb-6 md:px-8 px-3 ' >
 
             <div className='relative w-auto' >
-                {/* <img src="https://image.tmdb.org/t/p/w185/{{movies.poster_path}}" alt="pics" className='w-full' /> */}
                 <Image src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt='poster' width="500" height="500" className='w-full' data-testid='movie-poster' />
                 <div className='absolute top-5  text-xs md:text-sm text-white flex items-center justify-between px-2 w-full' >
-                    <p className='bg-gray-100 p-1 border-lg text-gray-900 border rounded-lg' data-testid='movie-category'>{firstGenreName}</p>
+                    <p className='bg-gray-100 p-1 border-lg text-gray-900 border rounded-lg'>{firstGenreName}</p>
                     <div
                         className={`bg-gray-100 p-[2px] border rounded-full cursor-pointer ${liked ? 'text-red-700' : 'text-gray-500 hover:p-1'
                             }`}
@@ -69,8 +73,8 @@ const MovieCard = ({ movie }) => {
 
             <Link href={`/movie/${movie.id}`}>
 
-                <p className='text-[12px] text-gray-400' data-testid='movie-release-date'>{movie.release_date}</p>
-                <h2 className='text-[18px] font-semibold' data-testid='movie-title'>{movie.original_title}</h2>
+                <p data-testid='movie-release-date' className='text-[12px] text-gray-400' >{movie.release_date}</p>
+                <h2 data-testid='movie-title' className='text-[18px] font-semibold' >{movie.title}</h2>
                 <div className='text-[12px] flex items-center justify-between'>
                     <div className='flex items-center'>
                         <Image src={Imdb} alt='Imdb' width={30} />

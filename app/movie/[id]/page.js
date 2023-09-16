@@ -13,6 +13,8 @@ const MovieDetailPage = () => {
     const params = useParams();
     const id = params.id;
     const [movie, setMovie] = useState(null);
+    const [error, setError] = useState(null);
+
 
     useEffect(() => {
         if (id) {
@@ -27,9 +29,16 @@ const MovieDetailPage = () => {
                 })
                 .catch((error) => {
                     console.error('Error fetching movie details:', error);
+                    setError('Error fetching movie details. Please try again later.');
                 });
+
         }
     }, [id]);
+
+    if (error) {
+        return <div className="error-message">{error}</div>;
+    }
+
 
     if (!movie) {
         return <div className='flex justify-center items-center h-[50vh]'>

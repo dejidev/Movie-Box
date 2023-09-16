@@ -6,28 +6,37 @@ import { BsChevronRight } from "react-icons/bs"
 import MovieCard from './MovieCard';
 import { RotatingLines } from 'react-loader-spinner';
 
-const MovieList = ({query}) => {
+const MovieList = () => {
     const [movies, setMovies] = useState([]);
     const [showMore, setShowMore] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
+
     const initialCardCount = 10;
-    // console.log(query);
     useEffect(() => {
-        // Define an async function to fetch popular movies
-        const fetchPopularMovies = async () => {
+        const fetchTopRatedMovies = async () => {
             try {
-                const response = await tmdbApi.get(`/movie/${query}`);
+                const response = await tmdbApi.get(`/movie/top_rated`);
                 setMovies(response.data.results);
+                setIsLoading(false);
             } catch (error) {
-                console.error('Error fetching movies:', error);
+                if (error.response) {
+                    setError('An error occurred while fetching movie details. Please try again later.');
+                } else if (error.request) {
+                    setError('Unable to fetch movie details. Please check your internet connection and try again.');
+                } else {
+                    setError('An unexpected error occurred. Please try again later.');
+                }
+            } finally {
+                setIsLoading(false)
             }
         };
 
-        // Call the fetchPopularMovies function
-        fetchPopularMovies();
+        fetchTopRatedMovies();
 
-    }, [query]);
+    }, []);
 
-    if (movies.length === 0) {
+    if (isLoading) {
         return <div className='flex justify-center items-center h-[50vh]'>
             <RotatingLines
                 strokeColor="grey"
@@ -36,7 +45,15 @@ const MovieList = ({query}) => {
                 width="96"
                 visible={true}
             />
-            </div>;
+        </div>;
+    }
+
+    if (error) {
+        return (
+            <div className='flex justify-center items-center h-[50vh]'>
+                <p className='text-red-500'>{error}</p>
+            </div>
+        );
     }
 
     const toggleShowMore = () => {

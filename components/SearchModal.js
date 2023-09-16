@@ -18,7 +18,7 @@ const SearchModal = ({ searchResults, onClose }) => {
                                 />
                                 <div>
                                     <h2>{movie.title}</h2>
-                                    <p className='text-x'>{movie.release_date}</p>
+                                    <p className='text-x'>{new Date(movie.release_date).getFullYear()}</p>
                                 </div>
                             </Link>
 

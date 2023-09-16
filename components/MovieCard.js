@@ -14,6 +14,7 @@ const MovieCard = ({ movie }) => {
     };
 
     const releaseDateUTC = convertToUTC(movie.release_date);
+    const movie_release_date = new Date(movie.release_date).getFullYear();
     const [liked, setLiked] = useState(false);
 
     const toggleLike = () => {
@@ -58,7 +59,7 @@ const MovieCard = ({ movie }) => {
         <div data-testid="movie-card" className='mb-6 md:px-8 px-3 ' >
 
             <div className='relative w-auto' >
-                <Image src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt='poster' width="500" height="500" className='w-full' data-testid='movie-poster' />
+                <Image data-testid='movie-poster' src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt='poster' width="500" height="500" className='w-full' />
                 <div className='absolute top-5  text-xs md:text-sm text-white flex items-center justify-between px-2 w-full' >
                     <p className='bg-gray-100 p-1 border-lg text-gray-900 border rounded-lg'>{firstGenreName}</p>
                     <div
@@ -73,7 +74,7 @@ const MovieCard = ({ movie }) => {
 
             <Link href={`/movie/${movie.id}`}>
 
-                <p data-testid='movie-release-date' className='text-[12px] text-gray-400' >{movie.release_date}</p>
+                <p data-testid='movie-release-date' className='text-[12px] text-gray-400' >{movie_release_date}</p>
                 <h2 data-testid='movie-title' className='text-[18px] font-semibold' >{movie.title}</h2>
                 <div className='text-[12px] flex items-center justify-between'>
                     <div className='flex items-center'>

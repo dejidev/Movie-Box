@@ -45,6 +45,7 @@ const MovieDetails = ({ movie }) => {
         setAsideVisible(!asideVisible);
     };
 
+    const release_date = new Date(movie.release_date).toUTCString();
     // console.log(movie.genre_ids);
     // console.log(movie);
     // Render the movie details here
@@ -218,7 +219,7 @@ const MovieDetails = ({ movie }) => {
                 </aside>
 
                 <section className='w-full md:w-3/4 mx-3 md:mx-6 lg:mx-8 mt-20 md:mt-8'>
-                    <div className="relative mt-3 md:mt-0 " data-testid="movie-poster">
+                    <div className="relative mt-3 md:mt-0 " >
                         <Image
                             src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
                             sizes="100vw"
@@ -247,9 +248,9 @@ const MovieDetails = ({ movie }) => {
                             <div className='lg:flex items-center justify-between'>
                                 <p className='gap-2 font-medium text-base md:text-[20px] '>
                                     <span data-testid="movie-title" className='px-1'>{movie.title}</span>•
-                                    <span data-testid="movie-release-date" className='px-1'>{movie.release_date}</span>•
+                                    <span data-testid="movie-release-date" className='px-1'>{release_date}</span>•
                                     {/* <span className='px-1'>{movie.vote_count}</span>• */}
-                                    <span data-testid="movie-runtime" className='px-1'>{movie.runtime}m</span>
+                                    <span data-testid="movie-runtime" className='px-1'>{movie.runtime}</span><span>m</span>
                                 </p>
 
                                 <div>
@@ -264,7 +265,7 @@ const MovieDetails = ({ movie }) => {
                                 </div>
                             </div>
 
-                            <p className='md:my-4 mb-4 text-sm' data-testid="movie-overview">{movie.overview}
+                            <p data-testid="movie-overview" className='md:my-4 mb-4 text-sm' >{movie.overview}
                             </p>
 
                             <div className='gap-2 font-medium'>

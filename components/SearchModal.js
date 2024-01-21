@@ -9,7 +9,7 @@ const SearchModal = ({ searchResults, onClose }) => {
                 <div className="search-results">
                     {searchResults.slice(0, 10).map((movie) => (
                         <div key={movie.id} >
-                            <Link href={`/movie/${movie.id}`} className="movie-card flex  items-center">
+                            <Link href={`/movies/${movie.id}`} className="movie-card flex  items-center">
                                 <Image
                                     src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
                                     alt={movie.title}
